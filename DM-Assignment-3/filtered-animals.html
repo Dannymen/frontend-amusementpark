@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* 2 x 2 grid*/
+    .grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .card{
+        background: dimgray;
+        border: 4px solid rgb(92, 207, 92);
+        border-radius: 10px;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .card img{
+        width: 500px;
+        height: 500px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+    }
+</style>
+<body>
+    <div class="grid">
+
+        <div class="card">
+            <img src="images/cat1.jpg" alt="Pretty Cat">
+            <h3>Image 1</h3>
+            <p>This image is random</p>
+            <button>New Filter Please!</button>
+        </div>
+
+        <div class="card">
+            <img src="images/cat2.webp" alt="Random Image 1">
+            <h3>Image 2</h3>
+            <p>This image is random</p>
+            <button>New Filter Please!</button>
+        </div>
+
+        <div class="card">
+            <img src="images/cat3.jpg" alt="Random Image 1">
+            <h3>Image 3</h3>
+            <p>This image is random</p>
+            <button>New Filter Please!</button>
+        </div>
+
+        <div class="card">
+            <img src="images/cat4.webp" alt="Random Image 1">
+            <h3>Image 4</h3>
+            <p>This image is random</p>
+            <button>New Filter Please!</button>
+        </div>        
+    </div>
+    
+
+    <script>
+        const filters = [
+            "grayscale(100%)",
+            "sepia(100%)",
+            "blur(4px)",
+            "contrast(200%)",
+            "hue-rotate(90deg)",
+            "brightness(150%)"
+        ];
+
+        const cards = document.querySelectorAll(".card");
+
+        function getRandomFilter() {
+            return filters[Math.floor(Math.random() * filters.length)];
+        }
+
+        cards.forEach(card => {
+            const img = card.querySelector("img");
+            const button = card.querySelector("button");
+
+            img.style.filter = getRandomFilter();
+
+            button.addEventListener("click", () => {
+                img.style.filter = getRandomFilter();
+            });
+        });
+
+        
+    </script>
+</body>
+</html>
