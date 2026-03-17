@@ -1,0 +1,72 @@
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#3c0d8e;
+}
+
+/* outer rectangle */
+.wrapper{
+    padding:60px;
+    background:#08a74a;
+}
+
+/* clock face */
+.clock{
+    width:400px;
+    height:400px;
+    background-image:url("img/clockimg.png");
+    background-size:contain;
+    background-repeat:no-repeat;
+    position:relative;
+}
+
+/* specific hand sizing */
+.hour {
+    width: 120px;  
+    height: 20px;  
+    margin-top: -10px; 
+}
+
+.minute {
+    width: 150px;  
+    height: 20px;  
+    margin-top: -10px; 
+}
+
+/* shared hand style */
+.hand {
+    position: absolute; 
+    top: 50%;           
+    left: 50%;          
+    transform-origin: 0% 50%; 
+}
+
+/* Hours classes */
+.h1{ transform: rotate(-60deg); }
+.h2{ transform: rotate(-30deg); }
+.h3{ transform: rotate(0deg); }
+.h4{ transform: rotate(30deg); }
+.h5{ transform: rotate(60deg); }
+.h6{ transform: rotate(90deg); }
+.h7{ transform: rotate(120deg); }
+.h8{ transform: rotate(150deg); }
+.h9{ transform: rotate(180deg); }
+.h10{ transform: rotate(210deg); }
+.h11{ transform: rotate(240deg); }
+.h12{ transform: rotate(-90deg); }
+
+/* Minute classes */
+.m0{ transform: rotate(-90deg); }
+.m5{ transform: rotate(-60deg); }
+.m10{ transform: rotate(-30deg); }
+.m15{ transform: rotate(0deg); }
+.m20{ transform: rotate(30deg); }
+.m25{ transform: rotate(60deg); }
+.m30{ transform: rotate(90deg); }
+.m35{ transform: rotate(120deg); }
+.m40{ transform: rotate(150deg); }
+.m45{ transform: rotate(180deg); }
+.m50{ transform: rotate(210deg); }
+.m55{ transform: rotate(240deg); }
