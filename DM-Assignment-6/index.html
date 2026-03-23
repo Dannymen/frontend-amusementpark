@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Clock</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <div class="clock">
+
+        <!-- Hour Hand -->
+        <img src="img/hand.png" class="hand hour h3">
+
+        <!-- Minute Hand -->
+        <img src="img/hand.png" class="hand minute m0">
+
+        <button onclick="restartClock()">Refresh Clock</button>
+
+    </div>
+
+</div>
+
+<script>
+    function restartClock() {
+        const hands = document.querySelectorAll('.hand');
+
+        hands.forEach(hand => {
+            hand.style.animation = 'none';
+            hand.offsetHeight;
+            hand.style.animation = '';
+        });
+    }
+</script>
+
+</body>
+</html>
