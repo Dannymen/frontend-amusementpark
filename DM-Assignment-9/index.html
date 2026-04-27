@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ET710 - Assignment 9</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .btn-color1 {
+            background-color: #e83e8c;
+            color: white;
+            border: none;
+        }
+
+        .btn-color2 {
+            background-color: #30986c;
+            color: rgb(17, 72, 148);
+        }
+
+        .btn-color1:hover {
+            background-color: #e8ee2b;
+            color: rgb(218, 183, 7);
+        }
+
+        .btn-color2:hover {
+            background-color: #390d72;
+            color: rgb(16, 76, 78);
+        }
+
+        .product-img-btn {
+            cursor: pointer;
+            transition: transform 0.2s;
+            height: 250px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .product-img-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-link {
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: #e83e8c !important;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Nav Menu -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4 shadow-sm">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="#">🌌 Magrathea Shopping Page</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="#">All Products</a></li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                        Climate
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Pleasant</a></li>
+                        <li><a class="dropdown-item" href="#">Dry</a></li>
+                        <li><a class="dropdown-item" href="#">Gassy</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item"><a class="nav-link" href="#">Next Galaxy!</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Resources</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Core Shopping</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Planets -->
+<div class="container">
+    <div class="row mb-5 text-center">
+
+        <!-- Earth -->
+        <div class="col-md-6">
+            <div class="card shadow-sm p-3">
+                <img src="img/product 1.webp" class="product-img-btn mb-3"
+                     data-bs-toggle="modal" data-bs-target="#productModal"
+                     data-name="Earth"
+                     data-desc="Comfortable Earth-themed clothing."
+                     data-features="Soft cotton, Eco-friendly, Breathable fabric">
+                <h5>Earth</h5>
+                <p>High Population capacity <br>200 Stellar coins <br> <i>Can grow any Species here</i> </p>
+            </div>
+        </div>
+
+        <!-- Saturn -->
+        <div class="col-md-6">
+            <div class="card shadow-sm p-3">
+                <img src="img/product-2-backup.jpeg" class="product-img-btn mb-3"
+                     data-bs-toggle="modal" data-bs-target="#productModal"
+                     data-name="Saturn"
+                     data-desc="Stylish Saturn apparel."
+                     data-features="Lightweight, Durable, Unique design">
+                <h5>Saturn</h5>
+                <p>Low Population capacity<br>80 Stellar coins <br> <i>Great for Gas Loving Species</i> </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-5 text-center">
+
+        <!-- Mars -->
+        <div class="col-md-6">
+            <div class="card shadow-sm p-3">
+                <img src="img/product 3.png" class="product-img-btn mb-3"
+                     data-bs-toggle="modal" data-bs-target="#productModal"
+                     data-name="Mars"
+                     data-desc="Rugged Mars gear."
+                     data-features="Heat resistant, Tough material, Adventure ready">
+                <h5>Mars</h5>
+                <p>High Population Capacity<br>90 Stellar coins <br> <i>Great for Lizard Cultures</i> </p>
+            </div>
+        </div>
+
+        <!-- Pluto -->
+        <div class="col-md-6">
+            <div class="card shadow-sm p-3">
+                <img src="img/product 4.png" class="product-img-btn mb-3"
+                     data-bs-toggle="modal" data-bs-target="#productModal"
+                     data-name="Pluto"
+                     data-desc="Compact Pluto wear."
+                     data-features="Minimalist, Cozy, Budget friendly">
+                <h5>Pluto</h5>
+                <p>Low Population Capacity<br>25 Stellar coins <br> <i>Ideal for those who don't need a lot of surface space</i> </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="productModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header border-0 pb-0" style="position:absolute; right:0;">
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="text-center mt-4">
+                <img id="modalDynamicImage" style="max-height:250px; border:2px solid black; border-radius:8px;">
+            </div>
+
+            <div class="modal-body text-center">
+                <h4 id="modalTitle" class="fw-bold"></h4>
+                <h6 id="modalDescription" class="text-muted mb-4"></h6>
+
+                <ul id="modalFeatures" class="list-unstyled text-start d-inline-block mx-auto mb-4"></ul>
+
+                <div class="d-flex justify-content-center align-items-center gap-2 mb-2">
+                    <label>Qty:</label>
+                    <input type="number" id="qtyInput" class="form-control" style="width:70px;" min="1" value="1" oninput="checkQuantity()">
+                    <button class="btn btn-color1" onclick="addToCart()">Add to Cart</button>
+                </div>
+
+                <div id="dynamicWarningArea" style="height:40px;"></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    const productModal = document.getElementById('productModal');
+
+    productModal.addEventListener('show.bs.modal', function (event) {
+        const trigger = event.relatedTarget;
+
+        document.getElementById('modalDynamicImage').src = trigger.getAttribute('src');
+        document.getElementById('modalTitle').textContent = trigger.getAttribute('data-name');
+        document.getElementById('modalDescription').textContent = trigger.getAttribute('data-desc');
+
+        const features = trigger.getAttribute('data-features').split(',');
+        const list = document.getElementById('modalFeatures');
+
+        list.innerHTML = '';
+
+        features.forEach(f => {
+            const li = document.createElement('li');
+            li.innerHTML = '<span style="color:red;">*</span> ' + f.trim();
+            list.appendChild(li);
+        });
+    });
+
+    productModal.addEventListener('hidden.bs.modal', function () {
+        document.getElementById('qtyInput').value = 1;
+        document.getElementById('dynamicWarningArea').innerHTML = '';
+    });
+
+    function checkQuantity() {
+        const qty = parseInt(document.getElementById('qtyInput').value);
+        const area = document.getElementById('dynamicWarningArea');
+
+        if (qty >= 99) {
+            area.innerHTML = '<div class="text-warning fw-bold mt-2">⚠ Large quantity selected</div>';
+        } else {
+            area.innerHTML = '';
+        }
+    }
+
+    function addToCart() {
+        alert("Item added to cart!");
+        bootstrap.Modal.getInstance(productModal).hide();
+    }
+</script>
+
+</body>
+</html>
